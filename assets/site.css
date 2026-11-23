@@ -8,6 +8,7 @@
 html, body { margin: 0; }
 body { background: var(--bg); color: var(--ink); font: 400 15px/1.5 var(--sans); -webkit-font-smoothing: antialiased; }
 a { color: inherit; }
+img { max-width: 100%; height: auto; }
 .skip { position: absolute; left: -999px; }
 .skip:focus { left: var(--gutter); top: 8px; background: var(--ink); color: var(--bg); padding: 6px 10px; }
 
