@@ -1,0 +1,17 @@
+title: Vic Lê
+description: "Vic Lê, 21, Espoo. Two startups in investment readiness and go-to-market. The problems I want to solve, what I'm building, and my blog."
+url: https://vudepchai2.github.io
+permalink: /blog/:title/
+markdown: kramdown
+plugins:
+  - jekyll-feed
+exclude:
+  - README.md
+  - shots
+  - .taste-skill
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

@@ -1,0 +1,18 @@
+---
+layout: base
+title: Blog
+description: What I'm thinking about, building and learning.
+---
+<main class="article" id="main">
+  <p class="kicker">Blog</p>
+  <h1>Writing</h1>
+  {% if site.posts.size > 0 %}
+  <ul class="rows posts">
+    {% for post in site.posts %}
+    <li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time><span><a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.description %}<small>{{ post.description }}</small>{% endif %}</span></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="lead">First posts coming soon.</p>
+  {% endif %}
+</main>

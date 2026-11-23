@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{% if page.title %}<title>{{ page.title }} · Vic Lê</title>{% else %}<title>Vic Lê</title>{% endif %}
+{% assign desc = page.description | default: site.description %}
+<meta name="description" content="{{ desc }}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ page.title | default: 'Vic Lê' }}">
+<meta property="og:description" content="{{ desc }}">
+<meta property="og:image" content="{{ '/share.jpg' | absolute_url }}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="alternate" type="application/atom+xml" title="Vic Lê" href="{{ '/feed.xml' | relative_url }}">
+<meta name="theme-color" content="#e6dbc7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="page">
+  <header class="mast">
+    <a class="mast__name" href="{{ '/' | relative_url }}"><svg viewBox="0 0 18 18" aria-hidden="true"><circle cx="4.5" cy="4.5" r="3.5" fill="currentColor"/><circle cx="13.5" cy="4.5" r="3.5" fill="currentColor"/><circle cx="4.5" cy="13.5" r="3.5" fill="currentColor"/><circle cx="13.5" cy="13.5" r="3.5" fill="currentColor"/></svg>Vic Lê</a>
+    <nav aria-label="Main">
+      <a class="hide-s" href="{{ '/#problems' | relative_url }}">Problems</a>
+      <a class="hide-s" href="{{ '/#building' | relative_url }}">Building</a>
+      <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      <a href="https://github.com/Vudepchai2">GitHub</a>
+      <a href="https://www.linkedin.com/in/uyvule/">LinkedIn</a>
+    </nav>
+  </header>
+
+{{ content }}
+
+  <footer class="foot">
+    <span>© {{ 'now' | date: '%Y' }} Vic Lê</span>
+    <span>Built in Espoo, hosted on GitHub Pages</span>
+  </footer>
+</div>
+</body>
+</html>
