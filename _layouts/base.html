@@ -37,8 +37,9 @@
 
   <footer class="foot">
     <span>© {{ 'now' | date: '%Y' }} Vic Lê</span>
-    <span>Built in Espoo, hosted on GitHub Pages</span>
+    <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
   </footer>
 </div>
+<script src="{{ '/assets/effects.js' | relative_url }}" defer></script>
 </body>
 </html>

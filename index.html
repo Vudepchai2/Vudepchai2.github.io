@@ -3,14 +3,16 @@ layout: base
 ---
   <main class="main" id="main">
     <section class="intro" aria-labelledby="h">
-      <p class="kicker rise">Espoo, Finland · 21</p>
-      <h1 id="h" class="rise" style="--i:1">Hi, I'm Vic. I don't shy away <em>from a challenge.</em></h1>
+      <h1 id="h" data-blur-text>Hi, I'm Vic. I don't shy away <em>from a challenge.</em></h1>
       <p class="lead rise" style="--i:2">Two startups in, in investment readiness and go-to-market. I helped the first raise €1M with decks and investor calls, and co-founded the second. Non-technical, and I still ship code every day with Claude.</p>
       <div class="actions rise" style="--i:3">
-        <a class="btn" href="https://www.linkedin.com/in/uyvule/">Message me on LinkedIn <span aria-hidden="true">→</span></a>
+        <a class="btn" data-magnet href="https://www.linkedin.com/in/uyvule/">Message me on LinkedIn <span aria-hidden="true">→</span></a>
         <a class="link" href="https://github.com/Vudepchai2">See my code on GitHub</a>
       </div>
-      <figure class="board rise" style="--i:4"><img src="/assets/img/whiteboard-1280.webp" srcset="/assets/img/whiteboard-800.webp 800w, /assets/img/whiteboard-1280.webp 1280w, /assets/img/whiteboard-1800.webp 1800w" sizes="(max-width: 1100px) 100vw, 45vw" width="1280" height="960" alt="My whiteboard: what successful founders say, next to what early founders say" fetchpriority="high"></figure>
+      <div class="media rise" style="--i:4">
+        <figure class="tilt" data-tilt><div class="tilt__inner"><img src="/assets/img/vic-900.webp" srcset="/assets/img/vic-480.webp 480w, /assets/img/vic-900.webp 900w" sizes="(max-width: 640px) 45vw, 18vw" width="900" height="900" alt="Vic Lê" fetchpriority="high"></div></figure>
+        <figure class="board"><img src="/assets/img/whiteboard-1280.webp" srcset="/assets/img/whiteboard-800.webp 800w, /assets/img/whiteboard-1280.webp 1280w, /assets/img/whiteboard-1800.webp 1800w" sizes="(max-width: 640px) 55vw, 28vw" width="1280" height="960" alt="My whiteboard: what successful founders say, next to what early founders say" loading="lazy"></figure>
+      </div>
     </section>
 
     <div class="side">
@@ -23,10 +25,10 @@ layout: base
         </ol>
       </section>
 
-      <section class="block rise" style="--i:4" id="building" aria-labelledby="b-h">
+      <section class="block rise" style="--i:4" id="building" data-spotlight aria-labelledby="b-h">
         <h2 id="b-h">Building</h2>
         <ul class="rows">
-          <li><time datetime="2026">2026</time><span><b>Engrammic</b><small>Co-founder, commercial. Antler residency. 60 builders at our event, 30 became beta testers.</small></span></li>
+          <li><time datetime="2026">2026</time><span><a href="https://github.com/engrammic">Engrammic ↗</a><small>Co-founder, commercial. Antler residency. 60 builders at our event, 30 became beta testers.</small></span></li>
           <li><time datetime="2026">2026</time><span><a href="https://github.com/Vudepchai2/sprint-companions">Sprint companions ↗</a><small>AI sparring partners that ask a founder one open question at a time.</small></span></li>
           <li><time datetime="2026">2026</time><span><a href="https://github.com/Vudepchai2/storycoach-engine">Storytelling engine ↗</a><small>Practise a talk on your laptop and get notes, never a score.</small></span></li>
         </ul>
