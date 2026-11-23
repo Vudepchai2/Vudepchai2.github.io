@@ -1,8 +1,7 @@
 /* Small effects, written in plain JS after React Bits components (reactbits.dev):
-   BlurText, TiltedCard, Magnet, SpotlightCard and ClickSpark. No framework, no build step. */
+   BlurText, SpotlightCard and ClickSpark. No framework, no build step. */
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   document.documentElement.classList.add('js');
 
   /* BlurText: words drop in from a blur, one after another */
@@ -31,40 +30,6 @@
   });
 
   if (reduce) return;
-
-  /* TiltedCard: the card leans toward the pointer and lifts */
-  if (finePointer) document.querySelectorAll('[data-tilt]').forEach(function (card) {
-    var inner = card.querySelector('.tilt__inner');
-    var amp = 14;
-    card.addEventListener('pointermove', function (e) {
-      var r = card.getBoundingClientRect();
-      var x = (e.clientX - r.left) / r.width - 0.5;
-      var y = (e.clientY - r.top) / r.height - 0.5;
-      card.classList.add('is-active');
-      inner.style.transform = 'rotateX(' + (-y * amp) + 'deg) rotateY(' + (x * amp) + 'deg) scale(1.06)';
-    });
-    card.addEventListener('pointerleave', function () {
-      card.classList.remove('is-active');
-      inner.style.transform = '';
-    });
-  });
-
-  /* Magnet: the button drifts toward a nearby pointer */
-  if (finePointer) document.querySelectorAll('[data-magnet]').forEach(function (el) {
-    var pad = 80, strength = 4;
-    window.addEventListener('pointermove', function (e) {
-      var r = el.getBoundingClientRect();
-      var cx = r.left + r.width / 2, cy = r.top + r.height / 2;
-      var near = Math.abs(e.clientX - cx) < r.width / 2 + pad && Math.abs(e.clientY - cy) < r.height / 2 + pad;
-      if (near) {
-        el.classList.add('is-pulled');
-        el.style.transform = 'translate3d(' + (e.clientX - cx) / strength + 'px,' + (e.clientY - cy) / strength + 'px,0)';
-      } else if (el.classList.contains('is-pulled')) {
-        el.classList.remove('is-pulled');
-        el.style.transform = '';
-      }
-    }, { passive: true });
-  });
 
   /* SpotlightCard: a soft light follows the pointer across each row */
   document.querySelectorAll('[data-spotlight] .rows li').forEach(function (li) {
